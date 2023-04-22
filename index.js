@@ -22,9 +22,9 @@ app.use(auth);
 
 app.use("/blogs", blogRouter);
 
+(async () => await connection)();
 app.listen(port, async (req, res) => {
   try {
-    await connection;
     console.log(`Listening on http://localhost:8080`);
   } catch (error) {
     console.log(error.message);
